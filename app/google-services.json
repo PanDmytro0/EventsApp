@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "810265235361",
+    "firebase_url": "https://nedosocialnewtork-default-rtdb.firebaseio.com",
+    "project_id": "nedosocialnewtork",
+    "storage_bucket": "nedosocialnewtork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810265235361:android:dacca4cb59fa58765fc5e0",
+        "android_client_info": {
+          "package_name": "com.fernfog.mamutrahal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810265235361-4on2onnml5kvboul71lqecujepg32b9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGOQGyl9cUCpg8sCH3PRE6ZCLHEu_Wqrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810265235361-4on2onnml5kvboul71lqecujepg32b9j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

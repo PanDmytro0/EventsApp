@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Event"
+    android:layout_marginTop="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/imageOfEvent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#000">
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textColor="#FFF"
+                android:background="#00000000"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="@id/descriptionText"
+                app:layout_constraintLeft_toLeftOf="@id/descriptionText"
+                app:layout_constraintBottom_toTopOf="@id/descriptionText" />
+
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#00000000"
+
+                android:maxLength="200"
+
+                android:textColor="#FFF"
+
+                android:text=""/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="@id/descriptionText"
+                app:layout_constraintRight_toRightOf="@id/descriptionText"
+                app:layout_constraintTop_toBottomOf="@id/descriptionText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cornerRadius="15dp"
+
+                android:text="Детальніше"
+                android:textColor="#000"
+
+                android:backgroundTint="#D9D9D9"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            app:layout_constraintLeft_toLeftOf="@id/imageOfEvent"
+            app:layout_constraintBottom_toTopOf="@id/imageOfEvent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            app:layout_constraintRight_toRightOf="@id/imageOfEvent"
+            app:layout_constraintBottom_toTopOf="@id/imageOfEvent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageOfEvent"
+            android:layout_width="200dp"
+            android:layout_height="230dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/constraint"/>
+
+        <ImageButton
+            android:id="@+id/favouriteButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:src="@drawable/favorite_48dp_e95245_fill0_wght400_grad0_opsz48"
+            android:background="#00000000"
+
+            app:layout_constraintBottom_toBottomOf="@id/imageOfEvent"
+            app:layout_constraintRight_toRightOf="@id/imageOfEvent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

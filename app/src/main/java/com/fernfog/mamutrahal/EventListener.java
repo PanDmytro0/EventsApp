@@ -35,15 +35,17 @@ public class EventListener extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        FragmentManager fragmentManager = getChildFragmentManager(); // або getSupportFragmentManager() в Activity
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-
         db.collection("events").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (DocumentSnapshot documentSnapshot: queryDocumentSnapshots) {
+                if (!isAdded()) return;
 
-                    EventData eventData = new EventData(documentSnapshot.getString("name"),
+                FragmentManager fragmentManager = getChildFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                    EventData eventData = new EventData(
+                            documentSnapshot.getString("name"),
                             documentSnapshot.getString("buy"),
                             documentSnapshot.getString("date"),
                             documentSnapshot.getString("desc"),
@@ -51,22 +53,20 @@ public class EventListener extends Fragment {
                             documentSnapshot.getString("location"),
                             documentSnapshot.getString("price"),
                             documentSnapshot.getString("time"),
-                            Integer.parseInt(documentSnapshot.getString("type")));
+                            Integer.parseInt(documentSnapshot.getString("type"))
+                    );
 
                     Event fragment1 = new Event(eventData, false);
-
                     transaction.add(R.id.EventHandler, fragment1);
                 }
-            }
-        }).addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                transaction.commit();
+
+                if (isAdded()) {
+                    transaction.commitAllowingStateLoss();
+                }
             }
         });
 
-
-
         return view;
     }
+
 }

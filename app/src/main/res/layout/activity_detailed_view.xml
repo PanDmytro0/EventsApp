@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,43 +8,281 @@
     tools:context=".DetailedView"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:id="@+id/image" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000">
+
+            <ImageView
+                android:background="#00000000"
+                android:id="@+id/topbarIcon"
+                android:src="@drawable/group_20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/topBarText"/>
+
+            <TextView
+                android:id="@+id/topBarText"
+                android:text="Подія"
+                android:textSize="30dp"
+                android:textColor="#FFF"
+                android:background="#00000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/topbarIcon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-</LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="660dp"
+
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="420dp"
+                android:id="@+id/image"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                app:layout_constraintLeft_toLeftOf="@id/desc"
+                app:layout_constraintBottom_toTopOf="@id/desc"
+                android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="330dp"
+                android:layout_height="130dp"
+
+                android:textSize="12dp"
+                android:textColor="#FFF"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintBottom_toTopOf="@id/dateText"/>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                app:layout_constraintBottom_toTopOf="@id/desc"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/eventInfo"
+
+                android:orientation="vertical"
+
+                android:layout_marginTop="30dp"
+
+                android:layout_marginLeft="30dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc">
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="16dp"
+
+                    android:text="Дата" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="12dp"
+                    android:textColor="#FFF"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="16dp"
+
+                    android:text="Час" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="12dp"
+                    android:textColor="#FFF"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/locationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+
+                    android:text="Локація" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="20dp"
+
+                    android:textSize="12dp"
+                    android:textColor="#FFF" />
+
+                <TextView
+                    android:id="@+id/linkText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+
+                    android:text="Посилання на подію" />
+
+                <TextView
+                    android:id="@+id/link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="12dp"
+                    android:textColor="#FFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+            </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/time"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:textSize="12dp"-->
+<!--                android:textColor="#FFF"-->
+
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/date"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/location"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/price"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:textSize="12dp"-->
+<!--                android:textColor="#FFF"-->
+
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/price"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/buy"/>-->
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/buy"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/location"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/calendar"-->
+
+
+<!--                app:cornerRadius="10dp"-->
+
+<!--                android:text="Посилання на подію"-->
+<!--                android:textSize="12dp"-->
+
+<!--                android:backgroundTint="#E95245"-->
+<!--                />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/calendar"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventInfo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/favouriteButton"
+                app:cornerRadius="10dp"
+
+                android:layout_marginTop="30dp"
+
+                android:text="Додати до"
+                android:textSize="12dp"
+                android:textColor="#000"
+
+                android:backgroundTint="#D9D9D9"
+
+                app:iconTint="@null"
+
+                app:icon="@drawable/google_calendar_icon__2020__svg_2"
+                app:iconSize="25dp"
+                app:iconGravity="end" />
+
+            <ImageButton
+                android:id="@+id/favouriteButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:background="#00000000"
+                android:src="@drawable/favorite_48dp_e95245_fill0_wght400_grad0_opsz48"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/calendar"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,10 +38,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_main);
 
         TextView topBarText = findViewById(R.id.topBarText);
         BottomNavigationView bottomNavigationBar = findViewById(R.id.bottom_navigation);
@@ -58,16 +57,30 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
 
+                if (item.getItemId() == R.id.nav_add) {
+                    topBarText.setText("Додати подію");
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddEventFragment()).commit();
+                    return true;
+                }
+
                 if (item.getItemId() == R.id.nav_search) {
-                    mAuth.signOut();
-                    finish();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//                    mAuth.signOut();
+//                    finish();
+//                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    topBarText.setText("Пошук");
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SearchFragment()).commit();
                     return true;
                 }
 
                 if (item.getItemId() == R.id.nav_favorite) {
                     topBarText.setText("Улюбені");
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FavouriteFragment()).commit();
+                    return true;
+                }
+
+                if (item.getItemId() == R.id.nav_person) {
+                    topBarText.setText("Профіль");
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
                     return true;
                 }
 

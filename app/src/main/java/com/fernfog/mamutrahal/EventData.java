@@ -15,8 +15,9 @@ public class EventData implements Parcelable {
     String price;
     String time;
     int type;
+    String user;
 
-    public EventData(String name, String buy, String date, String desccc, String image, String location, String price, String time, int type) {
+    public EventData(String name, String buy, String date, String desccc, String image, String location, String price, String time, int type, String user) {
         this.name = name;
         this.buy = buy;
         this.date = date;
@@ -26,6 +27,7 @@ public class EventData implements Parcelable {
         this.price = price;
         this.time = time;
         this.type = type;
+        this.user = user;
     }
 
     protected EventData(Parcel in) {

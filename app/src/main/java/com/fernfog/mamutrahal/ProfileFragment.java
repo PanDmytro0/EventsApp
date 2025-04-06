@@ -10,16 +10,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class EventListener extends Fragment {
+public class ProfileFragment extends Fragment {
+    private FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public EventListener() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -31,15 +34,11 @@ public class EventListener extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_event_listener, container, false);
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         db.collection("events").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                if (!isAdded()) return;
-
                 FragmentManager fragmentManager = getChildFragmentManager();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
 
@@ -58,16 +57,17 @@ public class EventListener extends Fragment {
                     );
 
                     Event fragment1 = new Event(eventData, false);
-                    transaction.add(R.id.EventHandler, fragment1);
+
+
+                    if (eventData.user != null && eventData.user.contains(mUser.getEmail())) {
+                        transaction.add(R.id.EventsHandler, fragment1);
+                    }
                 }
 
-                if (isAdded()) {
-                    transaction.commitAllowingStateLoss();
-                }
+                transaction.commit();
             }
         });
 
         return view;
     }
-
 }

@@ -38,20 +38,35 @@ public class LoginActivity extends AppCompatActivity {
 
         Button buttonLogIn = findViewById(R.id.loginButton);
         Button buttonRegister = findViewById(R.id.registerButton);
+        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
+
+        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChangePasswordActivity.class));
+            }
+        });
 
         buttonLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Вхід успішний!", Toast.LENGTH_SHORT).show();
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                String emailString = email.getText().toString();
+                String passwordString = password.getText().toString();
+
+                if (!emailString.isEmpty() && !passwordString.isEmpty()) {
+                    mAuth.signInWithEmailAndPassword(emailString, passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Вхід успішний!", Toast.LENGTH_SHORT).show();
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), HelloActivity.class));
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    Toast.makeText(LoginActivity.this, "Заповніть всю інформацію!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

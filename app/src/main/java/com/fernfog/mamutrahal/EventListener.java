@@ -1,11 +1,13 @@
 package com.fernfog.mamutrahal;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +37,12 @@ public class EventListener extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        boolean lutsk = sharedPreferences.getBoolean("lutsk", false);
+        boolean kyiv = sharedPreferences.getBoolean("kyiv", false);
+        boolean lviv = sharedPreferences.getBoolean("lviv", false);
+
         db.collection("events").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -58,7 +66,9 @@ public class EventListener extends Fragment {
                     );
 
                     Event fragment1 = new Event(eventData, false);
-                    transaction.add(R.id.EventHandler, fragment1);
+
+                    if ((lutsk && eventData.location.contains("Луцьк")) || (kyiv && eventData.location.contains("Київ")) || (lviv && eventData.location.contains("Львів")))
+                        transaction.add(R.id.EventHandler, fragment1);
                 }
 
                 if (isAdded()) {

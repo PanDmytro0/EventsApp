@@ -22,12 +22,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="380dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:hint="Пошта"
         android:id="@+id/emailll"
 
+        app:boxStrokeColor="@color/textinput_stroke_color"
+        app:hintTextColor="#FFF"
         android:textColorHint="#FFF"
+        app:cursorColor="#FFF"
+        app:cursorErrorColor="#FFF"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -43,12 +47,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="380dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:hint="Пароль"
         android:id="@+id/passworddd"
 
+        app:endIconMode="password_toggle"
+
         android:textColorHint="#FFF"
+        app:boxStrokeColor="@color/textinput_stroke_color"
+        app:hintTextColor="#FFF"
+        app:cursorColor="#FFF"
+        app:cursorErrorColor="#FFF"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -58,6 +68,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +76,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passworddd"
@@ -73,7 +84,7 @@
         app:cornerRadius="10dp"
 
         android:text="Увійти"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textColor="#FFF"
 
         android:backgroundTint="#E95245"
@@ -82,7 +93,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/registerButton"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginButton"
@@ -90,7 +101,7 @@
         app:cornerRadius="10dp"
 
         android:text="Реєстрація"
-        android:textSize="30dp"
+        android:textSize="25dp"
 
         android:textColor="#000"
 
@@ -100,7 +111,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/forgotPasswordButton"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
 
         style="@style/Widget.MaterialComponents.Button.TextButton"
 

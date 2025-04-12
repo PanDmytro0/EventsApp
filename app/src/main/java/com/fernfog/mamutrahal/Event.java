@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.preference.PreferenceManager;
@@ -17,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -65,6 +67,20 @@ public class Event extends Fragment {
         TextView timeText = view.findViewById(R.id.timeText);
         ImageView imageView = view.findViewById(R.id.imageOfEvent);
 
+        ViewGroup.LayoutParams imageViewParams = imageView.getLayoutParams();
+
+        CardView cardView = view.findViewById(R.id.cardView);
+
+//        cardView.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                imageViewParams.height = cardView.getHeight();
+//                imageViewParams.width = cardView.getWidth() / 2;
+//
+//                imageView.setLayoutParams(imageViewParams);
+//            }
+//        });
+
         descText.setText(eventData.getDesccc());
         dateText.setText(eventData.getDate());
         timeText.setText(eventData.getTime());
@@ -78,7 +94,7 @@ public class Event extends Fragment {
         storageRef.child("images").child(eventData.getImage()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Glide.with(view.getContext()).load(uri).into(imageView);
+                Glide.with(view.getContext()).load(uri).transform(new RoundedCorners(20)).into(imageView);
             }
         });
 

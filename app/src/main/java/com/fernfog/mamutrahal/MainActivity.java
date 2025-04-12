@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -44,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
         TextView topBarText = findViewById(R.id.topBarText);
         BottomNavigationView bottomNavigationBar = findViewById(R.id.bottom_navigation);
+
+        ImageButton settingsButton = findViewById(R.id.settingsButton);
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            }
+        });
 
         topBarText.setText("Найближчі події");
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventListener()).commit();

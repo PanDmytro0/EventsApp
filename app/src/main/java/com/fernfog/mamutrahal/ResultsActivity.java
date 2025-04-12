@@ -62,17 +62,18 @@ public class ResultsActivity extends AppCompatActivity {
 
                     Log.wtf("data", query);
 
-                    if ((query == null || query.isEmpty() ||
-                            (eventData.name != null && eventData.name.toLowerCase().contains(query.toLowerCase())))
-                            &&
-                            (date == null || date.isEmpty() || date.contains(eventData.date))
-                            &&
-                            (city == null || city.isEmpty() || city.equalsIgnoreCase(eventData.location))
-                            &&
-                            (price == null || price.isEmpty() || Integer.parseInt(price) <= Integer.parseInt(price) )) {
-
+                    if (
+                            (query == null || query.isEmpty() || (eventData.name != null && eventData.name.toLowerCase().contains(query.toLowerCase())))
+                                    &&
+                                    (date == null || date.isEmpty() || date.equals(eventData.date))
+                                    &&
+                                    (city == null || city.isEmpty() || (eventData.location != null && eventData.location.toLowerCase().contains(city.toLowerCase())))
+                                    &&
+                                    (price == null || price.isEmpty() || (eventData.price != null && Integer.parseInt(eventData.price) <= Integer.parseInt(price)))
+                    ) {
                         transaction.add(R.id.EventHandler, fragment1);
                     }
+
 
                 }
 

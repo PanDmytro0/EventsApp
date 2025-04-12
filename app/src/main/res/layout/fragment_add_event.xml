@@ -22,10 +22,12 @@
             android:paddingRight="20dp"
             android:gravity="center_horizontal">
 
-            <ImageView
-                android:id="@+id/ImageView"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
+            <ImageButton
+                android:id="@+id/chooseImageFileButton"
+                android:layout_width="340dp"
+                android:layout_height="420dp"
+
+                android:src="@drawable/img"
 
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
@@ -34,27 +36,26 @@
             <EditText
                 android:id="@+id/name"
 
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
                 android:layout_marginTop="10dp"
 
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Назва заходу"
-                android:textAlignment="center"
-                android:textSize="12dp"
+                android:hint="НАЗВА"
+                android:textSize="32dp"
+
+                android:layout_gravity="left"
 
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/description"
 
-                android:layout_width="230dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
+                android:layout_gravity="left"
 
                 android:layout_marginTop="10dp"
 
@@ -67,116 +68,133 @@
 
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/time"
-
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
                 android:layout_marginTop="10dp"
 
-                android:textColor="#FFF"
-                android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Час"
-                android:textAlignment="center"
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="16dp"
+                android:layout_gravity="left"
+                android:text="Дата" />
 
             <EditText
                 android:id="@+id/dateText"
 
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-
-                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
 
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Дата"
-                android:textAlignment="center"
+                android:hint="ДД.М.РРРР"
                 android:textSize="12dp"
 
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+
+                android:text="Локація" />
 
             <EditText
                 android:id="@+id/location"
 
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
 
-                android:layout_marginTop="10dp"
 
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Локація"
-                android:textAlignment="center"
+                android:hint="Луцьк, вулиця Потапова, 30"
                 android:textSize="12dp"
 
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/price"
+            <TextView
+                android:id="@+id/linkText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-
+                android:layout_gravity="left"
                 android:layout_marginTop="10dp"
 
-                android:textColor="#FFF"
-                android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Ціна"
-                android:textAlignment="center"
-                android:textSize="12dp"
+                android:textSize="16dp"
 
-                android:textStyle="bold" />
+                android:text="Посилання на подію" />
 
             <EditText
                 android:id="@+id/site"
 
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-
-                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
 
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="Сайт"
-                android:textAlignment="center"
+                android:hint="Додайте посилання сюди..."
                 android:textSize="12dp"
 
                 android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/chooseImageFileButton"
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                android:layout_width="215dp"
-
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-
+                android:textSize="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="left"
 
-                android:backgroundTint="#E95245"
+                android:text="Час" />
+
+            <EditText
+                android:id="@+id/time"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+
                 android:textColor="#FFF"
-
-                android:text="Обрати картинку"
-                android:textAlignment="center"
+                android:textColorHint="#FFF"
+                android:hint="00:00"
                 android:textSize="12dp"
 
-                app:cornerRadius="8dp"
+                android:textStyle="bold" />
 
-                app:iconGravity="end" />
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="left"
+
+                android:text="Ціна" />
+
+
+            <EditText
+                android:id="@+id/price"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                android:hint="Ціна (в гривнях)"
+                android:textSize="12dp"
+
+                android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submitArticleButton"
@@ -191,7 +209,7 @@
                 android:backgroundTint="#E95245"
                 android:textColor="#FFF"
 
-                android:text="Надіслати статтю"
+                android:text="Надіслати статтю!"
                 android:textAlignment="center"
                 android:textSize="12dp"
 

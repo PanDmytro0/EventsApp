@@ -6,115 +6,237 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
 
-    <TextView
-        android:id="@+id/usernameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--    -->
 
-        android:textColor="#FFF"
-        android:textAlignment="center"
-        android:text="pandmytro0@gmail.com"
-        android:textSize="30dp"
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/changeProfile"-->
+    <!--        android:layout_width="130dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        app:cornerRadius="9dp"-->
 
-        android:layout_marginBottom="10dp"
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintBottom_toTopOf="@id/profileDesc"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/usernameText"-->
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/line"/>
+    <!--        />-->
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+    <!--    <TextView-->
+    <!--        android:id="@+id/eventsText2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
 
-        app:layout_constraintTop_toBottomOf="@id/usernameText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/eventsText2"
+    <!--        android:text="Івентів"-->
+    <!--        android:textColor="#FFF"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="30dp"-->
 
-        />
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/line" />-->
 
-    <TextView
-        android:id="@+id/eventsText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--    <TextView-->
+    <!--        android:id="@+id/eventsText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
 
-        android:text="Івентів"
-        android:textColor="#FFF"
-        android:textAlignment="center"
-        android:textSize="30dp"
+    <!--        android:text="228"-->
+    <!--        android:textColor="#FFF"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="15dp"-->
 
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line" />
+    <!--        android:layout_marginTop="10dp"-->
 
-    <TextView
-        android:id="@+id/eventsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--        app:layout_constraintLeft_toLeftOf="@id/eventsText2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/eventsText2"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/eventsText2"/>-->
 
-        android:text="228"
-        android:textColor="#FFF"
-        android:textAlignment="center"
-        android:textSize="15dp"
+    <!--    <TextView-->
+    <!--        android:id="@+id/eventsText3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
 
-        android:layout_marginTop="10dp"
+    <!--        android:text="Остання подія"-->
+    <!--        android:textColor="#FFF"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="30dp"-->
 
-        app:layout_constraintLeft_toLeftOf="@id/eventsText2"
-        app:layout_constraintTop_toBottomOf="@id/eventsText2"
-        app:layout_constraintRight_toRightOf="@id/eventsText2"/>
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginRight="10dp"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/line"/>-->
 
-    <TextView
-        android:id="@+id/eventsText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--    <TextView-->
+    <!--        android:id="@+id/lastEventsText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
 
-        android:text="Остання подія"
-        android:textColor="#FFF"
-        android:textAlignment="center"
-        android:textSize="30dp"
+    <!--        android:text="228"-->
+    <!--        android:textColor="#FFF"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="15dp"-->
 
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line"/>
+    <!--        android:layout_marginTop="10dp"-->
 
-    <TextView
-        android:id="@+id/lastEventsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="228"
-        android:textColor="#FFF"
-        android:textAlignment="center"
-        android:textSize="15dp"
-
-        android:layout_marginTop="10dp"
-
-        app:layout_constraintLeft_toLeftOf="@id/eventsText3"
-        app:layout_constraintTop_toBottomOf="@id/eventsText3"
-        app:layout_constraintRight_toRightOf="@id/eventsText3"/>
+    <!--        app:layout_constraintLeft_toLeftOf="@id/eventsText3"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/eventsText3"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/eventsText3"/>-->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="30dp"
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastEventsText">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/EventsHandler"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/profileicon_2"
+                android:layout_marginBottom="5dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/username"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="10dp"
+
+                android:fontFamily="@font/montserrat_bold"
+                android:text="username"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/stats"
+                app:layout_constraintLeft_toLeftOf="@id/profileImage"
+                app:layout_constraintRight_toRightOf="@id/profileImage"
+                app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+            <LinearLayout
+                android:id="@+id/stats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/username"
+                app:layout_constraintRight_toRightOf="@id/username"
+                app:layout_constraintTop_toBottomOf="@id/username"
+                app:layout_constraintBottom_toTopOf="@id/editProfile">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="Події"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/eventsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:text=""
+                        android:textColor="#FFF"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="16sp"
+                        android:text="Ранг"
+                        android:textColor="#FFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat"
+                        android:text=""
+                        android:textColor="#FFF"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/editProfile"
+
+                android:layout_marginBottom="10dp"
+
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Редагувати профіль"
+                app:cornerRadius="15dp"
+                android:backgroundTint="#D9D9D9"
+                android:textColor="#7E7575"
+                app:layout_constraintLeft_toLeftOf="@id/stats"
+                app:layout_constraintRight_toRightOf="@id/stats"
+                app:layout_constraintTop_toBottomOf="@id/stats"
+                app:layout_constraintBottom_toTopOf="@id/desc"/>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="10dp"
+                android:textSize="13sp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/montserrat"
+
+                app:layout_constraintLeft_toLeftOf="@id/stats"
+                app:layout_constraintRight_toRightOf="@id/stats"
+                app:layout_constraintTop_toBottomOf="@id/editProfile"
+                app:layout_constraintBottom_toTopOf="@id/EventsHandler"/>
+
+            <LinearLayout
+                android:id="@+id/EventsHandler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </ScrollView>
 

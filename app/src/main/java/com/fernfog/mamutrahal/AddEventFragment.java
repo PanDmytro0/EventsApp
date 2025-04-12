@@ -43,13 +43,14 @@ public class AddEventFragment extends Fragment {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
     public static final int PICK_IMAGE_FILE = 1;
-    ImageView mImage;
-    MaterialButton chooseFileButton;
+    ImageButton chooseFileButton;
     MaterialButton submitButton;
     EditText shortDescription;
     Uri image;
+    StorageReference imageRef;
 
     public AddEventFragment() {
+
     }
 
     @Override
@@ -67,7 +68,6 @@ public class AddEventFragment extends Fragment {
 
             mAuth.getCurrentUser().reload();
 
-            mImage = view.findViewById(R.id.ImageView);
             chooseFileButton = view.findViewById(R.id.chooseImageFileButton);
             submitButton = view.findViewById(R.id.submitArticleButton);
             shortDescription = view.findViewById(R.id.description);
@@ -82,60 +82,68 @@ public class AddEventFragment extends Fragment {
             submitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StorageReference imageRef = storageReference.child("images/"+image.getLastPathSegment());
-                    imageRef.putFile(image);
+                    if (image != null) {
+                        imageRef = storageReference.child("images/"+image.getLastPathSegment());
+                        imageRef.putFile(image);
 
-                    EditText nameText = view.findViewById(R.id.name);
-                    String nameString = nameText.getEditableText().toString();
+                        EditText nameText = view.findViewById(R.id.name);
+                        String nameString = nameText.getEditableText().toString();
 
-                    EditText buyText = view.findViewById(R.id.site);
-                    String buyString = buyText.getEditableText().toString();
+                        EditText buyText = view.findViewById(R.id.site);
+                        String buyString = buyText.getEditableText().toString();
 
-                    EditText dateText = view.findViewById(R.id.dateText);
-                    String dateString = dateText.getEditableText().toString();
+                        EditText dateText = view.findViewById(R.id.dateText);
+                        String dateString = dateText.getEditableText().toString();
 
-                    EditText descText = view.findViewById(R.id.description);
-                    String descString = descText.getEditableText().toString();
+                        EditText descText = view.findViewById(R.id.description);
+                        String descString = descText.getEditableText().toString();
 
-                    EditText locationText = view.findViewById(R.id.location);
-                    String locationString = locationText.getEditableText().toString();
+                        EditText locationText = view.findViewById(R.id.location);
+                        String locationString = locationText.getEditableText().toString();
 
-                    EditText priceText = view.findViewById(R.id.price);
-                    String priceString = priceText.getEditableText().toString();
+                        EditText priceText = view.findViewById(R.id.price);
+                        String priceString = priceText.getEditableText().toString();
 
-                    EditText timeText = view.findViewById(R.id.time);
-                    String timeString = timeText.getEditableText().toString();
+                        EditText timeText = view.findViewById(R.id.time);
+                        String timeString = timeText.getEditableText().toString();
 
-                    Map<String, Object> data = new HashMap<>();
-                    data.put("image", imageRef.getName());
-                    data.put("buy", buyString);
-                    data.put("user" , mUser.getEmail());
-                    data.put("date", dateString);
-                    data.put("desc", descString);
-                    data.put("location", locationString);
-                    data.put("name", nameString);
-                    data.put("price", priceString);
-                    data.put("time", timeString);
-                    data.put("type", "1");
+                        Map<String, Object> data = new HashMap<>();
+                        data.put("image", imageRef.getName());
+                        data.put("buy", buyString);
+                        data.put("user" , mUser.getEmail());
+                        data.put("date", dateString);
+                        data.put("desc", descString);
+                        data.put("location", locationString);
+                        data.put("name", nameString);
+                        data.put("price", priceString);
+                        data.put("time", timeString);
+                        data.put("type", "1");
 
-                    FirebaseUser currentUser = mAuth.getCurrentUser();
+                        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-                    if (currentUser == null) {
+                        if (currentUser == null) {
 
-                    } else {
-                        db.collection("events").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(v.getContext(), "Success", Toast.LENGTH_LONG).show();
+                        } else {
+                            if (!nameString.isEmpty()
+                                    && !buyString.isEmpty()
+                                    && !dateString.isEmpty()
+                                    && !descString.isEmpty()
+                                    && !locationString.isEmpty()
+                                    && !priceString.isEmpty()
+                                    && !timeString.isEmpty()) {
+                                db.collection("events").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        Toast.makeText(v.getContext(), "Success", Toast.LENGTH_LONG).show();
+                                    }
+                                });
                             }
-                        });
+                        }
                     }
-
-
                 }
             });
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
         return view;
@@ -153,7 +161,7 @@ public class AddEventFragment extends Fragment {
         if (requestCode == PICK_IMAGE_FILE && resultCode == Activity.RESULT_OK) {
             if (data != null) {
                 image = data.getData();
-                Glide.with(AddEventFragment.this).load(data.getData()).into(mImage);
+                Glide.with(AddEventFragment.this).load(data.getData()).into(chooseFileButton);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

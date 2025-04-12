@@ -4,7 +4,6 @@
         <item name="android:colorControlHighlight">#000</item>
         <item name="colorPrimary">#000</item>
         <item name="android:background">#211E1E</item>
-
     </style>
 
     <style name="Theme.MamutRahal" parent="Base.Theme.MamutRahal" />

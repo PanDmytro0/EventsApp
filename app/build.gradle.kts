@@ -38,6 +38,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage:21.0.1")
     implementation ("com.google.firebase:firebase-auth:23.2.0")
     implementation ("com.google.firebase:firebase-firestore:25.1.3")
+    implementation("com.google.firebase:firebase-database")
 
     implementation("com.google.android.gms:play-services-auth:21.3.0")
     implementation ("com.google.code.gson:gson:2.10.1")

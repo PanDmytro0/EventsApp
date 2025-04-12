@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Коли поле в фокусі -->
+    <item android:color="#E95245" android:state_focused="true" />
+
+    <!-- Усі інші стани -->
+    <item android:color="#818181" />
+</selector>

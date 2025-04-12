@@ -7,46 +7,122 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="380dp"
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Пошта"
-        android:id="@+id/emailll"
-
-        android:textColorHint="#FFF"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/profileImage"
+
+        android:textColor="#FFF"
+        android:text="Реєстрація"
+        android:textSize="40dp" />
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:src="@drawable/profileicon_2"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintBottom_toTopOf="@id/textFields" />
+
+    <ImageButton
+        android:id="@+id/addProfileImage"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:src="@drawable/group_43"
+        app:layout_constraintRight_toRightOf="@id/profileImage"
+        app:layout_constraintBottom_toBottomOf="@id/profileImage"/>
+
+    <LinearLayout
+        android:id="@+id/textFields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
         app:layout_constraintBottom_toTopOf="@id/loginButton"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            />
+            android:hint="Імʼя користувача"
+            android:id="@+id/nicknameee"
+            android:layout_marginBottom="20dp"
 
-    </com.google.android.material.textfield.TextInputLayout>
+            app:boxStrokeColor="@color/textinput_stroke_color"
+            app:hintTextColor="#FFF"
+            android:textColorHint="#FFF"
+            app:cursorColor="#FFF"
+            app:cursorErrorColor="#FFF">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:hint="Пароль"
-        android:id="@+id/passworddd"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
-        android:textColorHint="#FFF"
+        </com.google.android.material.textfield.TextInputLayout>
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailll" >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
-            />
+            android:hint="Пошта"
+            android:id="@+id/emailll"
 
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="20dp"
+
+            app:boxStrokeColor="@color/textinput_stroke_color"
+            app:hintTextColor="#FFF"
+            android:textColorHint="#FFF"
+            app:cursorColor="#FFF"
+            app:cursorErrorColor="#FFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:hint="Пароль"
+            android:id="@+id/passworddd"
+
+            app:endIconMode="password_toggle"
+
+            android:textColorHint="#FFF"
+            app:boxStrokeColor="@color/textinput_stroke_color"
+            app:hintTextColor="#FFF"
+            app:cursorColor="#FFF"
+            app:cursorErrorColor="#FFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
@@ -54,7 +130,7 @@
         android:layout_height="60dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passworddd"
+        app:layout_constraintTop_toBottomOf="@id/textFields"
         app:layout_constraintBottom_toBottomOf="parent"
         app:cornerRadius="10dp"
 

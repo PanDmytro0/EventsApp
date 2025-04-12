@@ -1,17 +1,20 @@
 package com.fernfog.mamutrahal;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -22,14 +25,18 @@ import android.widget.Toast;
 import androidx.appcompat.widget.SearchView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.Calendar;
 
 public class SearchFragment extends Fragment {
 
+    String query;
     String date;
     String city;
     String price;
+
+    MaterialButton deleteFilters;
 
     public SearchFragment() {
 
@@ -45,9 +52,39 @@ public class SearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
-        Button filtersButton = view.findViewById(R.id.filterButton);
+        ImageButton filtersButton = view.findViewById(R.id.filterButton);
 
         SearchView searchView = view.findViewById(R.id.searchView);
+
+        ImageButton searchButton = view.findViewById(R.id.searchButton);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ResultsActivity.class);
+
+                intent.putExtra("searchQuery", query);
+                intent.putExtra("date", date);
+                intent.putExtra("city", city);
+                intent.putExtra("price", price);
+
+                startActivity(intent);
+            }
+        });
+
+        deleteFilters = view.findViewById(R.id.deleteFilters);
+        deleteFilters.setVisibility(View.INVISIBLE);
+
+        deleteFilters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteFilters.setVisibility(View.INVISIBLE);
+                query = "";
+                date = "";
+                city = "";
+                price = "";
+            }
+        });
 
         EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(Color.BLACK);
@@ -76,6 +113,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                query = newText;
                 return false;
             }
         });
@@ -84,6 +122,14 @@ public class SearchFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(view.getContext());
+
+                bottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface) {
+                        Log.d("jafjwjjoifwa", "anlkflkeanfm");
+                        deleteFilters.setVisibility(View.VISIBLE);
+                    }
+                });
 
                 View viewDialog = LayoutInflater.from(view.getContext()).inflate(R.layout.dialog_filter, null);
 

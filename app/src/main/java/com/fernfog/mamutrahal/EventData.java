@@ -14,10 +14,10 @@ public class EventData implements Parcelable {
     String location;
     String price;
     String time;
-    int type;
+    String type;
     String user;
 
-    public EventData(String name, String buy, String date, String desccc, String image, String location, String price, String time, int type, String user) {
+    public EventData(String name, String buy, String date, String desccc, String image, String location, String price, String time, String type, String user) {
         this.name = name;
         this.buy = buy;
         this.date = date;
@@ -39,7 +39,7 @@ public class EventData implements Parcelable {
         location = in.readString();
         price = in.readString();
         time = in.readString();
-        type = in.readInt();
+        type = in.readString();
     }
 
     public static final Creator<EventData> CREATOR = new Creator<EventData>() {
@@ -86,7 +86,7 @@ public class EventData implements Parcelable {
         return time;
     }
 
-    public int getType() {
+    public String getType() {
         return type;
     }
 
@@ -105,6 +105,6 @@ public class EventData implements Parcelable {
         parcel.writeString(location);
         parcel.writeString(price);
         parcel.writeString(time);
-        parcel.writeInt(type);
+        parcel.writeString(type);
     }
 }

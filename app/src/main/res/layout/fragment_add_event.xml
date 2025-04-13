@@ -68,6 +68,85 @@
 
                 android:textStyle="bold" />
 
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp" >
+
+                <RadioButton
+                    android:id="@+id/concert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Концерт"
+                    android:textColor="#9E88FF" />
+
+                <RadioButton
+                    android:id="@+id/party"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вечірка"
+                    android:textColor="#ED2C7E" />
+
+                <RadioButton
+                    android:id="@+id/nastolka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Настільні ігри"
+                    android:textColor="#FF8D28" />
+
+                <RadioButton
+                    android:id="@+id/cosplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Косплей"
+                    android:textColor="#FF4DD3" />
+
+                <RadioButton
+                    android:id="@+id/vystava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вистава"
+                    android:textColor="#71D8FF" />
+
+                <RadioButton
+                    android:id="@+id/reading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Читання"
+                    android:textColor="#F96729" />
+
+                <RadioButton
+                    android:id="@+id/performance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Перформанс"
+                    android:textColor="#CD8800" />
+
+            </RadioGroup>
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"

@@ -73,8 +73,9 @@ public class SetCityFragment extends Fragment {
                 editor.putBoolean("lviv", lviv);
                 editor.apply();
 
-                requireActivity().finish();
-                startActivity(new Intent(requireContext(), MainActivity.class));
+                ViewPager2 viewPager2 = requireActivity().findViewById(R.id.viewPager);
+
+                viewPager2.setCurrentItem(2);
             }
         });
 

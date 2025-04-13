@@ -54,7 +54,7 @@ public class ResultsActivity extends AppCompatActivity {
                             documentSnapshot.getString("location"),
                             documentSnapshot.getString("price"),
                             documentSnapshot.getString("time"),
-                            Integer.parseInt(documentSnapshot.getString("type")),
+                            documentSnapshot.getString("type"),
                             documentSnapshot.getString("user")
                     );
 

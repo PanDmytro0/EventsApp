@@ -32,6 +32,8 @@ public class HelloActivity extends AppCompatActivity {
                         return new HelloFragment();
                     case 1:
                         return new SetCityFragment();
+                    case 2:
+                        return new InterestFragment();
                     default:
                         return new HelloFragment();
                 }

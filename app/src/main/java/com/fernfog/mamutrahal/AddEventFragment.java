@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -63,6 +65,8 @@ public class AddEventFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_event, container, false);
 
+        Map<String, Object> data = new HashMap<>();
+
         try {
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -71,6 +75,16 @@ public class AddEventFragment extends Fragment {
             chooseFileButton = view.findViewById(R.id.chooseImageFileButton);
             submitButton = view.findViewById(R.id.submitArticleButton);
             shortDescription = view.findViewById(R.id.description);
+
+            RadioGroup radioGroup = view.findViewById(R.id.radioGroup);
+
+            radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                    RadioButton radioButton = view.findViewById(i);
+                    data.put("type", radioButton.getText().toString());
+                }
+            });
 
             chooseFileButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -107,7 +121,6 @@ public class AddEventFragment extends Fragment {
                         EditText timeText = view.findViewById(R.id.time);
                         String timeString = timeText.getEditableText().toString();
 
-                        Map<String, Object> data = new HashMap<>();
                         data.put("image", imageRef.getName());
                         data.put("buy", buyString);
                         data.put("user" , mUser.getEmail());
@@ -117,7 +130,7 @@ public class AddEventFragment extends Fragment {
                         data.put("name", nameString);
                         data.put("price", priceString);
                         data.put("time", timeString);
-                        data.put("type", "1");
+
 
                         FirebaseUser currentUser = mAuth.getCurrentUser();
 

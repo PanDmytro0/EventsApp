@@ -26,6 +26,14 @@ public class SettingsActivity extends AppCompatActivity {
     boolean kyiv = false;
     boolean lviv = false;
 
+    boolean concert = false;
+    boolean party = false;
+    boolean nastolka = false;
+    boolean cosplay = false;
+    boolean vystava = false;
+    boolean reading = false;
+    boolean performance = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +92,30 @@ public class SettingsActivity extends AppCompatActivity {
         kyivCheck.setChecked(kyiv);
         lvivCheck.setChecked(lviv);
 
+        CheckBox concertCheck = findViewById(R.id.concert);
+        CheckBox partyCheck = findViewById(R.id.party);
+        CheckBox nastolkaCheck = findViewById(R.id.nastolka);
+        CheckBox cosplayCheck = findViewById(R.id.cosplay);
+        CheckBox vystavaCheck = findViewById(R.id.vystava);
+        CheckBox readingCheck = findViewById(R.id.reading);
+        CheckBox performanceCheck = findViewById(R.id.performance);
+
+        concert = prefs.getBoolean("concert", true);
+        party = prefs.getBoolean("party", true);
+        nastolka = prefs.getBoolean("nastolka", true);
+        cosplay = prefs.getBoolean("cosplay", true);
+        vystava = prefs.getBoolean("vystava", true);
+        reading = prefs.getBoolean("reading", true);
+        performance = prefs.getBoolean("performance", true);
+
+        concertCheck.setChecked(concert);
+        partyCheck.setChecked(party);
+        nastolkaCheck.setChecked(nastolka);
+        cosplayCheck.setChecked(cosplay);
+        vystavaCheck.setChecked(vystava);
+        readingCheck.setChecked(reading);
+        performanceCheck.setChecked(performance);
+
         lutskCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -107,6 +139,63 @@ public class SettingsActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 lviv = b;
                 editor.putBoolean("lviv", lviv);
+                editor.apply();
+            }
+        });
+
+
+        concertCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("concert", b);
+                editor.apply();
+            }
+        });
+
+        partyCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("party", b);
+                editor.apply();
+            }
+        });
+
+        nastolkaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("nastolka", b);
+                editor.apply();
+            }
+        });
+
+        cosplayCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("cosplay", b);
+                editor.apply();
+            }
+        });
+
+        vystavaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("vystava", b);
+                editor.apply();
+            }
+        });
+
+        readingCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("reading", b);
+                editor.apply();
+            }
+        });
+
+        performanceCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("performance", b);
                 editor.apply();
             }
         });

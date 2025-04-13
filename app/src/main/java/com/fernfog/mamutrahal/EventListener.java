@@ -22,7 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 public class EventListener extends Fragment {
 
     public EventListener() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -43,6 +43,14 @@ public class EventListener extends Fragment {
         boolean kyiv = sharedPreferences.getBoolean("kyiv", false);
         boolean lviv = sharedPreferences.getBoolean("lviv", false);
 
+        boolean concert = sharedPreferences.getBoolean("concert", false);
+        boolean party = sharedPreferences.getBoolean("party", false);
+        boolean nastolka = sharedPreferences.getBoolean("nastolka", false);
+        boolean cosplay = sharedPreferences.getBoolean("cosplay", false);
+        boolean vystava = sharedPreferences.getBoolean("vystava", false);
+        boolean reading = sharedPreferences.getBoolean("reading", false);
+        boolean performance = sharedPreferences.getBoolean("performance", false);
+
         db.collection("events").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -61,14 +69,21 @@ public class EventListener extends Fragment {
                             documentSnapshot.getString("location"),
                             documentSnapshot.getString("price"),
                             documentSnapshot.getString("time"),
-                            Integer.parseInt(documentSnapshot.getString("type")),
+                            documentSnapshot.getString("type"),
                             documentSnapshot.getString("user")
                     );
 
                     Event fragment1 = new Event(eventData, false);
-
-                    if ((lutsk && eventData.location.contains("Луцьк")) || (kyiv && eventData.location.contains("Київ")) || (lviv && eventData.location.contains("Львів")))
-                        transaction.add(R.id.EventHandler, fragment1);
+                    if (concert && eventData.type.contains("Концерт") ||
+                            (party && eventData.type.contains("Вечірка")) ||
+                            (nastolka && eventData.type.contains("Настільні ігри")) ||
+                            (vystava && eventData.type.contains("Косплей")) ||
+                            (cosplay && eventData.type.contains("Вистава")) ||
+                            (reading && eventData.type.contains("Читання")) ||
+                            (performance && eventData.type.contains("Перформанс"))) {
+                        if ((lutsk && eventData.location.contains("Луцьк")) || (kyiv && eventData.location.contains("Київ")) || (lviv && eventData.location.contains("Львів")))
+                            transaction.add(R.id.EventHandler, fragment1);
+                    }
                 }
 
                 if (isAdded()) {

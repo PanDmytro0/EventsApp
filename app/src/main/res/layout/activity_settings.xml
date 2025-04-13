@@ -41,194 +41,312 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
-
-    <LinearLayout
-        android:id="@+id/checkLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-
-        app:layout_constraintBottom_toTopOf="@id/accessibilityLayout"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="Обрані міста"
-
-            android:layout_marginBottom="20dp"
-
-            android:textSize="20sp"
-            android:textColor="#7E7575"
-            android:fontFamily="@font/montserrat_medium"/>
-
-        <CheckBox
-            android:id="@+id/lutsk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="24sp"
-            android:fontFamily="@font/montserrat"
-            android:text="Луцьк"
-            android:textColor="#FFF"/>
-
-        <CheckBox
-            android:id="@+id/kyiv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="24sp"
-            android:fontFamily="@font/montserrat"
-            android:text="Київ"
-            android:textColor="#FFF"/>
-
-        <CheckBox
-            android:id="@+id/lviv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:textSize="24sp"
-            android:fontFamily="@font/montserrat"
-            android:text="Львів"
-            android:textColor="#FFF"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/accessibilityLayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/checkLayout"
+        android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/logInAndSecurityLayout"
-        >
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/dostupnist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            android:text="Доступність"
-
-            android:textSize="20sp"
-            android:textColor="#7E7575"
-            android:fontFamily="@font/montserrat_medium"
-            android:layout_marginBottom="20dp" />
-
-        <LinearLayout
-            android:id="@+id/language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center"
-
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/languageText"
+            <LinearLayout
+                android:id="@+id/interestLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Мова:"
+                android:layout_marginBottom="10dp"
 
-                android:layout_marginRight="75dp"
 
-                android:textSize="22sp"
-                android:textColor="#FFF"
-                android:fontFamily="@font/montserrat_semibold" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/checkLayout"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ua"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Типи подій"
+
+                    android:layout_marginBottom="20dp"
+
+                    android:textSize="20sp"
+                    android:textColor="#7E7575"
+                    android:fontFamily="@font/montserrat_medium"/>
+
+                <CheckBox
+                    android:id="@+id/concert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Концерт"
+                    android:textColor="#9E88FF"/>
+
+                <CheckBox
+                    android:id="@+id/party"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вечірка"
+                    android:textColor="#ED2C7E"/>
+
+                <CheckBox
+                    android:id="@+id/nastolka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Настільні ігри"
+                    android:textColor="#FF8D28"/>
+
+                <CheckBox
+                    android:id="@+id/cosplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Косплей"
+                    android:textColor="#FF4DD3"/>
+
+                <CheckBox
+                    android:id="@+id/vystava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вистава"
+                    android:textColor="#71D8FF"/>
+
+                <CheckBox
+                    android:id="@+id/reading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Читання"
+                    android:textColor="#F96729"/>
+
+                <CheckBox
+                    android:id="@+id/performance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Перформанс"
+                    android:textColor="#CD8800"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/checkLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="Українська"
+                android:layout_marginBottom="10dp"
 
-                android:textSize="20sp"
-                android:textColor="#FFF"
-                android:fontFamily="@font/montserrat" />
+                app:layout_constraintBottom_toTopOf="@id/accessibilityLayout"
+                app:layout_constraintTop_toBottomOf="@id/interestLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/accessibilityButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                    android:text="Обрані міста"
 
-            style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_marginBottom="20dp"
 
-            android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#7E7575"
+                    android:fontFamily="@font/montserrat_medium"/>
 
-            android:textSize="15sp"
-            android:fontFamily="@font/montserrat"
-            android:text="Налаштування доступності"
-            android:textColor="#FFF" />
+                <CheckBox
+                    android:id="@+id/lutsk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    </LinearLayout>
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Луцьк"
+                    android:textColor="#FFF"/>
 
-<LinearLayout
-    android:id="@+id/logInAndSecurityLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/accessibilityLayout"
-    app:layout_constraintBottom_toBottomOf="parent">
+                <CheckBox
+                    android:id="@+id/kyiv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/loginAndChangePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Київ"
+                    android:textColor="#FFF"/>
 
-        android:text="Вхід та безпека"
+                <CheckBox
+                    android:id="@+id/lviv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-        android:layout_marginBottom="20dp"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Львів"
+                    android:textColor="#FFF"/>
 
-        android:textSize="20sp"
-        android:textColor="#7E7575"
-        android:fontFamily="@font/montserrat_medium" />
+            </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/changePasswordButton"
+            <LinearLayout
+                android:id="@+id/accessibilityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
 
-        android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/checkLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/logInAndSecurityLayout"
+                >
 
-        android:backgroundTint="#D9D9D9"
-        android:textColor="#000"
+                <TextView
+                    android:id="@+id/dostupnist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Змінити пароль"
-        android:textAlignment="center"
-        android:textSize="20sp"
+                    android:text="Доступність"
 
-        app:cornerRadius="8dp" />
+                    android:textSize="20sp"
+                    android:textColor="#7E7575"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_marginBottom="20dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/logOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                <LinearLayout
+                    android:id="@+id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-        style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_gravity="center"
 
-        android:textSize="20sp"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Вихід"
-        android:textColor="#E95245"
+                    android:orientation="horizontal">
 
-        android:layout_gravity="center"
+                    <TextView
+                        android:id="@+id/languageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-        />
+                        android:text="Мова:"
 
-</LinearLayout>
+                        android:layout_marginRight="75dp"
 
+                        android:textSize="22sp"
+                        android:textColor="#FFF"
+                        android:fontFamily="@font/montserrat_semibold" />
+
+                    <TextView
+                        android:id="@+id/ua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Українська"
+
+                        android:textSize="20sp"
+                        android:textColor="#FFF"
+                        android:fontFamily="@font/montserrat" />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accessibilityButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/Widget.Material3.Button.TextButton"
+
+                    android:layout_gravity="center"
+
+                    android:textSize="15sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Налаштування доступності"
+                    android:textColor="#FFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/logInAndSecurityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accessibilityLayout"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/loginAndChangePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Вхід та безпека"
+
+                    android:layout_marginBottom="20dp"
+
+                    android:textSize="20sp"
+                    android:textColor="#7E7575"
+                    android:fontFamily="@font/montserrat_medium" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/changePasswordButton"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:backgroundTint="#D9D9D9"
+                    android:textColor="#000"
+
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Змінити пароль"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+
+                    app:cornerRadius="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logOutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/Widget.Material3.Button.TextButton"
+
+                    android:textSize="20sp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Вихід"
+                    android:textColor="#E95245"
+
+                    android:layout_gravity="center"
+
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 <!--    <LinearLayout-->
 <!--        android:id=""-->
 

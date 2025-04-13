@@ -3,121 +3,251 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/cityTypeText"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textColor="#FFF"
-        android:textSize="36dp"
-        android:text="Місто"
-        android:textAlignment="center"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintTop_toBottomOf="@id/cityTypeText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Київ"
-            android:textColor="#FFF"/>
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Львів"
-            android:textColor="#FFF"/>
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Луцьк"
-            android:textColor="#FFF" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/dateeText"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textColor="#FFF"
-        android:textSize="36dp"
-        android:text="Дата"
-
-        android:layout_marginTop="30dp"
-
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/radioGroup"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/dateButton"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateeText"
-        app:cornerRadius="10dp"
-
-        android:text="Обрати дату"
-        android:textSize="15dp"
-        android:textColor="#FFF"
-
-        android:backgroundTint="#E95245"
-        />
-
-    <TextView
-        android:id="@+id/priceText"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textColor="#FFF"
-        android:textSize="36dp"
-        android:text="Ціна"
-
-        android:layout_marginTop="30dp"
-
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/dateButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <SeekBar
-        android:id="@+id/seekBar"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="3000"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        android:progressTint="#E95245"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        android:progress="1000"
+            <TextView
+                android:id="@+id/cityTypeText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:textColor="#FFF"
+                android:textSize="36dp"
+                android:text="Місто"
+                android:fontFamily="@font/montserrat_medium"
+                android:textAlignment="center"
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/priceText"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
 
-    <TextView
-        android:id="@+id/textPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/seekBar"
-        app:layout_constraintRight_toRightOf="@id/seekBar"
-        app:layout_constraintTop_toBottomOf="@id/seekBar"
+            <RadioGroup
+                android:id="@+id/cityGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:textColor="#FFF"
-        android:text="1000" />
+                app:layout_constraintTop_toBottomOf="@id/cityTypeText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Київ"
+                    app:buttonTint="#E95245"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#FFF"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Львів"
+                    app:buttonTint="#E95245"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="#FFF"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Луцьк"
+                    app:buttonTint="#E95245"
+                    android:textColor="#FFF" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/typeText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:textColor="#FFF"
+                android:textSize="36dp"
+                android:text="Тип події"
+                android:fontFamily="@font/montserrat_medium"
+                android:textAlignment="center"
+
+                android:layout_marginTop="20dp"
+
+                app:layout_constraintTop_toBottomOf="@id/cityGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <RadioGroup
+                android:id="@+id/interestGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/typeText">
+
+                <RadioButton
+                    android:id="@+id/concert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#9E88FF"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Концерт"
+                    android:textColor="#9E88FF" />
+
+                <RadioButton
+                    android:id="@+id/party"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#ED2C7E"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вечірка"
+                    android:textColor="#ED2C7E" />
+
+                <RadioButton
+                    android:id="@+id/nastolka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#FF8D28"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Настільні ігри"
+                    android:textColor="#FF8D28" />
+
+                <RadioButton
+                    android:id="@+id/cosplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#FF4DD3"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Косплей"
+                    android:textColor="#FF4DD3" />
+
+                <RadioButton
+                    android:id="@+id/vystava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#71D8FF"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Вистава"
+                    android:textColor="#71D8FF" />
+
+                <RadioButton
+                    android:id="@+id/reading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#F96729"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Читання"
+                    android:textColor="#F96729" />
+
+                <RadioButton
+                    android:id="@+id/performance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:buttonTint="#CD8800"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Перформанс"
+                    android:textColor="#CD8800" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/dateeText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:textColor="#FFF"
+                android:textSize="36dp"
+                android:text="Дата"
+                android:fontFamily="@font/montserrat_medium"
+
+                android:layout_marginTop="30dp"
+
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/interestGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateeText"
+                app:cornerRadius="10dp"
+
+                android:fontFamily="@font/montserrat_bold"
+
+                android:text="Обрати дату"
+                android:textSize="15dp"
+                android:textColor="#FFF"
+
+                android:backgroundTint="#E95245"
+                />
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:textColor="#FFF"
+                android:textSize="36dp"
+                android:text="Ціна"
+                android:fontFamily="@font/montserrat_medium"
+
+                android:layout_marginTop="30dp"
+
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/dateButton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="3000"
+
+                android:progressTint="#E95245"
+
+                android:progress="1000"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/priceText"/>
+
+            <TextView
+                android:id="@+id/textPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/seekBar"
+                app:layout_constraintRight_toRightOf="@id/seekBar"
+                app:layout_constraintTop_toBottomOf="@id/seekBar"
+
+                android:fontFamily="@font/montserrat"
+                android:textColor="#FFF"
+                android:text="1000" />
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

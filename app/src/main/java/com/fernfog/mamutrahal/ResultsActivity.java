@@ -35,6 +35,7 @@ public class ResultsActivity extends AppCompatActivity {
         String date = intent.getStringExtra("date");
         String city = intent.getStringExtra("city");
         String price = intent.getStringExtra("price");
+        String type = intent.getStringExtra("type");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -70,6 +71,9 @@ public class ResultsActivity extends AppCompatActivity {
                                     (city == null || city.isEmpty() || (eventData.location != null && eventData.location.toLowerCase().contains(city.toLowerCase())))
                                     &&
                                     (price == null || price.isEmpty() || (eventData.price != null && Integer.parseInt(eventData.price) <= Integer.parseInt(price)))
+                                    &&
+                                    (type == null || type.isEmpty() || (eventData.type != null && eventData.type.contains(type)))
+
                     ) {
                         transaction.add(R.id.EventHandler, fragment1);
                     }

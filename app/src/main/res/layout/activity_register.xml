@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/profileImage"
 
+        android:fontFamily="@font/montserrat"
         android:textColor="#FFF"
         android:text="Реєстрація"
         android:textSize="40dp" />
@@ -71,6 +72,7 @@
                 android:id="@+id/nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,6 +95,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -116,6 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:fontFamily="@font/montserrat"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -136,6 +140,8 @@
 
         android:text="Реєстрація"
         android:textSize="30dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="#FFF"
 
         android:backgroundTint="#E95245"
         />

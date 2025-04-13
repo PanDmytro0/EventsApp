@@ -57,6 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#E95245"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Луцьк"
@@ -67,6 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#E95245"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Київ"
@@ -76,6 +80,8 @@
             android:id="@+id/lviv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:buttonTint="#E95245"
 
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"

@@ -32,10 +32,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFF"
+                android:fontFamily="@font/montserrat_semibold"
                 app:layout_constraintTop_toBottomOf="@id/image"
                 app:layout_constraintLeft_toLeftOf="@id/desc"
-                app:layout_constraintBottom_toTopOf="@id/desc"
+                app:layout_constraintBottom_toTopOf="@id/type"
                 android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintRight_toRightOf="@id/desc"
+                app:layout_constraintBottom_toTopOf="@id/desc"
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/desc"
@@ -44,20 +55,12 @@
 
                 android:textSize="12dp"
                 android:textColor="#FFF"
+                android:fontFamily="@font/montserrat"
 
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/type"
                 app:layout_constraintBottom_toTopOf="@id/dateText"/>
-
-            <TextView
-                android:id="@+id/type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image"
-                app:layout_constraintBottom_toTopOf="@id/desc"
-                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -80,6 +83,7 @@
                     android:layout_height="wrap_content"
 
                     android:textSize="16dp"
+                    android:fontFamily="@font/montserrat_semibold"
 
                     android:text="Дата" />
 
@@ -87,7 +91,7 @@
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/montserrat_medium"
                     android:textSize="12dp"
                     android:textColor="#FFF"
                     android:layout_marginBottom="20dp"/>
@@ -96,7 +100,7 @@
                     android:id="@+id/timeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/montserrat_semibold"
                     android:textSize="16dp"
 
                     android:text="Час" />
@@ -105,7 +109,7 @@
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/montserrat_medium"
                     android:textSize="12dp"
                     android:textColor="#FFF"
                     android:layout_marginBottom="20dp"/>
@@ -115,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16dp"
-
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Локація" />
 
                 <TextView
@@ -124,7 +128,7 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginBottom="20dp"
-
+                    android:fontFamily="@font/montserrat_medium"
                     android:textSize="12dp"
                     android:textColor="#FFF" />
 
@@ -133,14 +137,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16dp"
-
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="Посилання на подію" />
 
                 <TextView
                     android:id="@+id/link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/montserrat_medium"
                     android:textSize="12dp"
                     android:textColor="#FFF" />
 
@@ -212,6 +216,7 @@
                 android:text="Додати до"
                 android:textSize="12dp"
                 android:textColor="#000"
+                android:fontFamily="@font/montserrat_semibold"
 
                 android:backgroundTint="#D9D9D9"
 
@@ -269,6 +274,9 @@
                 android:text="Подія"
                 android:textSize="30dp"
                 android:textColor="#FFF"
+
+                android:fontFamily="@font/montserrat_medium"
+
                 android:background="#00000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -42,6 +42,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,6 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:fontFamily="@font/montserrat_medium"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,6 +88,7 @@
         android:text="Увійти"
         android:textSize="25dp"
         android:textColor="#FFF"
+        android:fontFamily="@font/montserrat_semibold"
 
         android:backgroundTint="#E95245"
         />
@@ -102,6 +105,7 @@
 
         android:text="Реєстрація"
         android:textSize="25dp"
+        android:fontFamily="@font/montserrat_semibold"
 
         android:textColor="#000"
 
@@ -116,6 +120,7 @@
         style="@style/Widget.MaterialComponents.Button.TextButton"
 
         android:text="Забули Пароль ?"
+        android:fontFamily="@font/montserrat_semibold"
 
         android:textColor="#FFF"
 

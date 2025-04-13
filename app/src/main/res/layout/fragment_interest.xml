@@ -57,6 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#9E88FF"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Концерт"
@@ -66,6 +68,8 @@
             android:id="@+id/party"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:buttonTint="#ED2C7E"
 
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
@@ -77,6 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#FF8D28"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Настільні ігри"
@@ -86,6 +92,8 @@
             android:id="@+id/cosplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:buttonTint="#FF4DD3"
 
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
@@ -97,6 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#71D8FF"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Вистава"
@@ -107,6 +117,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:buttonTint="#F96729"
+
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"
             android:text="Читання"
@@ -116,6 +128,8 @@
             android:id="@+id/performance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:buttonTint="#CD8800"
 
             android:textSize="24sp"
             android:fontFamily="@font/montserrat"

@@ -1,6 +1,7 @@
 package com.fernfog.mamutrahal;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -56,7 +57,7 @@ public class DetailedView extends AppCompatActivity {
         EventData eventData = getIntent().getParcelableExtra("event_data");
 
         TextView name = findViewById(R.id.name);
-//        TextView type = findViewById(R.id.type);
+        TextView type = findViewById(R.id.type);
         TextView date = findViewById(R.id.date);
         TextView time = findViewById(R.id.time);
         TextView location = findViewById(R.id.location);
@@ -116,7 +117,7 @@ public class DetailedView extends AppCompatActivity {
         });
 
         name.setText(eventData.getName());
-//        type.setText(eventData.getType());
+
         date.setText(eventData.getDate());
         time.setText(eventData.getTime());
         location.setText(eventData.getLocation());
@@ -125,6 +126,33 @@ public class DetailedView extends AppCompatActivity {
         link.setText(eventData.getBuy());
 
         Linkify.addLinks(link, Linkify.WEB_URLS);
+
+        String typeString = eventData.getType();
+        type.setText(eventData.getType());
+
+        switch (typeString) {
+            case "Концерт":
+                type.setTextColor(Color.parseColor("#9E88FF"));
+                break;
+            case "Вечірка":
+                type.setTextColor(Color.parseColor("#ED2C7E"));
+                break;
+            case "Настільні ігри":
+                type.setTextColor(Color.parseColor("#FF8D28"));
+                break;
+            case "Косплей":
+                type.setTextColor(Color.parseColor("#FF4DD3"));
+                break;
+            case "Вистава":
+                type.setTextColor(Color.parseColor("#71D8FF"));
+                break;
+            case "Читання":
+                type.setTextColor(Color.parseColor("#F96729"));
+                break;
+            case "Перформанс":
+                type.setTextColor(Color.parseColor("#CD8800"));
+                break;
+        }
 
     }
 

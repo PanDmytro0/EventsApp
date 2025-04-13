@@ -122,6 +122,7 @@ public class ProfileFragment extends Fragment {
             });
 
             TextView countText = view.findViewById(R.id.eventsText);
+            TextView rankText = view.findViewById(R.id.rankText);
             final int[] eventsCount = {0};
 
             db.collection("events").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -159,6 +160,32 @@ public class ProfileFragment extends Fragment {
                     transaction.commit();
 
                     countText.setText("" + eventsCount[0]);
+
+
+                    int count = eventsCount[0];
+
+                    if (count < 1) {
+                        rankText.setText("Новачок");
+                    } else if (count >= 1 && count <= 3) {
+                        rankText.setText("Активний");
+                    } else if (count >= 4 && count <= 7) {
+                        rankText.setText("Дослідник");
+                    } else if (count >= 8 && count <= 15) {
+                        rankText.setText("Знавець");
+                    } else if (count >= 16 && count <= 25) {
+                        rankText.setText("Частий гість");
+                    } else if (count >= 26 && count <= 40) {
+                        rankText.setText("Постійний");
+                    } else if (count >= 41 && count <= 60) {
+                        rankText.setText("Експерт");
+                    } else if (count >= 61 && count <= 80) {
+                        rankText.setText("Гуру");
+                    } else if (count >= 81 && count <= 100) {
+                        rankText.setText("Легенда");
+                    } else { // більше 100
+                        rankText.setText("Ікона міста");
+                    }
+
                 }
             });
         } catch (Exception e) {

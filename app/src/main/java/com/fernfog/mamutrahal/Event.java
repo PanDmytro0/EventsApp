@@ -91,12 +91,15 @@ public class Event extends Fragment {
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
 
-        storageRef.child("images").child(eventData.getImage()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                Glide.with(view.getContext()).load(uri).transform(new RoundedCorners(20)).into(imageView);
-            }
-        });
+
+            storageRef.child("images").child(eventData.getImage()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    if (isAdded())
+                        Glide.with(getContext()).load(uri).transform(new RoundedCorners(20)).into(imageView);
+
+                }
+            });
 
         buttonFavourite.setOnClickListener(new View.OnClickListener() {
             @Override

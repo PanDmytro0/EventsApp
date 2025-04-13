@@ -74,7 +74,6 @@ public class SetCityFragment extends Fragment {
                 editor.apply();
 
                 ViewPager2 viewPager2 = requireActivity().findViewById(R.id.viewPager);
-
                 viewPager2.setCurrentItem(2);
             }
         });

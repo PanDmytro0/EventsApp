@@ -39,8 +39,9 @@
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:text="Редагування профілю"
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/topbarIcon"
                 app:layout_constraintRight_toRightOf="parent"
@@ -103,6 +104,7 @@
             android:layout_gravity="center"
             android:textColor="#FFF"
             android:textSize="12sp"
+            android:fontFamily="@font/montserrat"
             android:layout_marginRight="10dp"
             android:text="Імʼя користувача"/>
         
@@ -111,6 +113,7 @@
             android:background="@drawable/text_edit"
             android:layout_gravity="center"
             android:hint="Приклад"
+            android:fontFamily="@font/montserrat"
             android:textSize="20sp"
             android:maxLength="19"
             android:textAlignment="center"
@@ -151,6 +154,7 @@
             android:layout_gravity="center"
             android:textColor="#FFF"
             android:textSize="12sp"
+            android:fontFamily="@font/montserrat"
             android:layout_marginRight="10dp"
             android:text="Біографія"/>
 
@@ -158,6 +162,7 @@
             android:id="@+id/descEditText"
             android:background="@drawable/text_edit"
             android:layout_gravity="center"
+            android:fontFamily="@font/montserrat"
             android:hint="Ростислав нероба, ледацюга, ледащо, сидить дивиться Youtube Shorts"
             android:textSize="14sp"
             android:textAlignment="center"
@@ -197,6 +202,7 @@
         android:text="Зберегти"
         android:textAlignment="center"
         android:textSize="20dp"
+        android:fontFamily="@font/montserrat_semibold"
 
         app:cornerRadius="8dp"
 

@@ -35,6 +35,7 @@ public class SearchFragment extends Fragment {
     String date;
     String city;
     String price;
+    String type;
 
     MaterialButton deleteFilters;
 
@@ -67,6 +68,7 @@ public class SearchFragment extends Fragment {
                 intent.putExtra("date", date);
                 intent.putExtra("city", city);
                 intent.putExtra("price", price);
+                intent.putExtra("type", type);
 
                 startActivity(intent);
             }
@@ -83,6 +85,7 @@ public class SearchFragment extends Fragment {
                 date = "";
                 city = "";
                 price = "";
+                type = "";
             }
         });
 
@@ -105,6 +108,7 @@ public class SearchFragment extends Fragment {
                 intent.putExtra("date", date);
                 intent.putExtra("city", city);
                 intent.putExtra("price", price);
+                intent.putExtra("type", type);
 
                 startActivity(intent);
 
@@ -135,14 +139,23 @@ public class SearchFragment extends Fragment {
 
                 Button button = viewDialog.findViewById(R.id.dateButton);
                 SeekBar seekBar = viewDialog.findViewById(R.id.seekBar);
-                RadioGroup radioGroup = viewDialog.findViewById(R.id.radioGroup);
+                RadioGroup cityGroup = viewDialog.findViewById(R.id.cityGroup);
+                RadioGroup interestGroup = viewDialog.findViewById(R.id.interestGroup);
                 TextView textView = viewDialog.findViewById(R.id.textPrice);
 
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                cityGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         RadioButton radioButton = viewDialog.findViewById(i);
                         city = radioButton.getText().toString();
+                    }
+                });
+
+                interestGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                        RadioButton radioButton = viewDialog.findViewById(i);
+                        type = radioButton.getText().toString();
                     }
                 });
 

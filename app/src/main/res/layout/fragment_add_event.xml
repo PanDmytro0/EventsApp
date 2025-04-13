@@ -45,6 +45,7 @@
                 android:textColorHint="#FFF"
                 android:hint="НАЗВА"
                 android:textSize="32dp"
+                android:fontFamily="@font/montserrat_semibold"
 
                 android:layout_gravity="left"
 
@@ -65,6 +66,7 @@
                 android:hint="Опис"
                 android:textAlignment="center"
                 android:textSize="12dp"
+                android:fontFamily="@font/montserrat"
 
                 android:textStyle="bold" />
 
@@ -80,6 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#9E88FF"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Концерт"
@@ -90,6 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#ED2C7E"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Вечірка"
@@ -100,6 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#FF8D28"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Настільні ігри"
@@ -110,6 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#FF4DD3"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Косплей"
@@ -120,6 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#71D8FF"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Вистава"
@@ -130,6 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#F96729"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Читання"
@@ -140,6 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+                    app:buttonTint="#CD8800"
                     android:textSize="18sp"
                     android:fontFamily="@font/montserrat"
                     android:text="Перформанс"
@@ -154,6 +163,7 @@
 
                 android:layout_marginTop="10dp"
 
+                android:fontFamily="@font/montserrat_semibold"
                 android:textSize="16dp"
                 android:layout_gravity="left"
                 android:text="Дата" />
@@ -165,12 +175,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
 
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:hint="ДД.М.РРРР"
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/locationText"
@@ -180,7 +189,7 @@
 
                 android:layout_marginTop="10dp"
                 android:layout_gravity="left"
-
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Локація" />
 
             <EditText
@@ -190,13 +199,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
 
-
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:hint="Луцьк, вулиця Потапова, 30"
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/linkText"
@@ -205,9 +212,8 @@
 
                 android:layout_gravity="left"
                 android:layout_marginTop="10dp"
-
+                android:fontFamily="@font/montserrat_semibold"
                 android:textSize="16dp"
-
                 android:text="Посилання на подію" />
 
             <EditText
@@ -217,12 +223,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
 
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:hint="Додайте посилання сюди..."
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/timeText"
@@ -232,7 +237,7 @@
                 android:textSize="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="left"
-
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Час" />
 
             <EditText
@@ -242,12 +247,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
 
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:hint="00:00"
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/priceText"
@@ -257,7 +261,7 @@
                 android:textSize="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="left"
-
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Ціна" />
 
 
@@ -268,19 +272,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
 
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:hint="Ціна (в гривнях)"
-                android:textSize="12dp"
-
-                android:textStyle="bold" />
+                android:textSize="12dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/submitArticleButton"
 
-                android:layout_width="215dp"
+                android:layout_width="wrap_content"
 
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
 
                 android:layout_marginTop="10dp"
@@ -288,9 +291,10 @@
                 android:backgroundTint="#E95245"
                 android:textColor="#FFF"
 
-                android:text="Надіслати статтю!"
+                android:text="Готово"
                 android:textAlignment="center"
-                android:textSize="12dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat_semibold"
 
                 app:cornerRadius="8dp"
 

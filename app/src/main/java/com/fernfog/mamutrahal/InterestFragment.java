@@ -42,11 +42,11 @@ public class InterestFragment extends Fragment {
         MaterialButton nextButton = view.findViewById(R.id.nextButton);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
-        SharedPreferences.Editor editor = prefs.edit();
 
         concertCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("concert", b);
                 editor.apply();
             }
@@ -55,6 +55,7 @@ public class InterestFragment extends Fragment {
         partyCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("party", b);
                 editor.apply();
             }
@@ -63,6 +64,7 @@ public class InterestFragment extends Fragment {
         nastolkaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("nastolka", b);
                 editor.apply();
             }
@@ -71,6 +73,7 @@ public class InterestFragment extends Fragment {
         cosplayCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("cosplay", b);
                 editor.apply();
             }
@@ -79,6 +82,7 @@ public class InterestFragment extends Fragment {
         vystavaCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("vystava", b);
                 editor.apply();
             }
@@ -87,6 +91,7 @@ public class InterestFragment extends Fragment {
         readingCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("reading", b);
                 editor.apply();
             }
@@ -95,6 +100,7 @@ public class InterestFragment extends Fragment {
         performanceCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("performance", b);
                 editor.apply();
             }

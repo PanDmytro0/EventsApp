@@ -77,8 +77,8 @@ public class EventListener extends Fragment {
                     if (concert && eventData.type.contains("Концерт") ||
                             (party && eventData.type.contains("Вечірка")) ||
                             (nastolka && eventData.type.contains("Настільні ігри")) ||
-                            (vystava && eventData.type.contains("Косплей")) ||
-                            (cosplay && eventData.type.contains("Вистава")) ||
+                            (cosplay && eventData.type.contains("Косплей")) ||
+                            (vystava && eventData.type.contains("Вистава")) ||
                             (reading && eventData.type.contains("Читання")) ||
                             (performance && eventData.type.contains("Перформанс"))) {
                         if ((lutsk && eventData.location.contains("Луцьк")) || (kyiv && eventData.location.contains("Київ")) || (lviv && eventData.location.contains("Львів")))

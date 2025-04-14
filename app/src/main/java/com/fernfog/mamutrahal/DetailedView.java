@@ -2,34 +2,53 @@ package com.fernfog.mamutrahal;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DetailedView extends AppCompatActivity {
+    DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +70,15 @@ public class DetailedView extends AppCompatActivity {
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
+
+        ImageButton backButton = findViewById(R.id.buttonBack);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         ImageView imageView = findViewById(R.id.image);
 
@@ -152,6 +180,61 @@ public class DetailedView extends AppCompatActivity {
             case "Перформанс":
                 type.setTextColor(Color.parseColor("#CD8800"));
                 break;
+        }
+
+        ImageView profilePic = findViewById(R.id.UserIcon);
+        MaterialButton userEmail = findViewById(R.id.emailText);
+
+        userEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailedView.this, PersonProfileActivity.class);
+                intent.putExtra("email", eventData.user);
+                startActivity(intent);
+            }
+        });
+
+        Log.d("user", eventData.user);
+
+        try {
+            Query query = usersRef.orderByChild("email").equalTo(eventData.user);
+
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot child : snapshot.getChildren()) {
+                        FirebaseStorage storage = FirebaseStorage.getInstance();
+                        StorageReference storageRef = storage.getReference();
+
+                        String image = child.child("image").getValue(String.class);
+                        String nickname = child.child("nickname").getValue(String.class);
+
+                        Log.d("image", image);
+
+                        storageRef.child("users").child(image).getDownloadUrl()
+                                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Glide.with(DetailedView.this).load(uri).circleCrop().into(profilePic);
+                                    }
+                                })
+                                .addOnFailureListener(e -> {
+                                    e.printStackTrace();
+                                    Toast.makeText(DetailedView.this, "Помилка завантаження зображення", Toast.LENGTH_SHORT).show();
+                                });
+
+
+                        userEmail.setText(nickname);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

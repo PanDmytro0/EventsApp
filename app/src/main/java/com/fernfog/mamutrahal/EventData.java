@@ -40,6 +40,7 @@ public class EventData implements Parcelable {
         price = in.readString();
         time = in.readString();
         type = in.readString();
+        user = in.readString();
     }
 
     public static final Creator<EventData> CREATOR = new Creator<EventData>() {
@@ -106,5 +107,6 @@ public class EventData implements Parcelable {
         parcel.writeString(price);
         parcel.writeString(time);
         parcel.writeString(type);
+        parcel.writeString(user);
     }
 }

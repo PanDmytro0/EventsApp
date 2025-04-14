@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MamutRahal"
         tools:targetApi="31">
         <activity
+            android:name=".PersonProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />
         <activity

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +52,15 @@ public class SettingsActivity extends AppCompatActivity {
         MaterialButton changePasswordButton = findViewById(R.id.changePasswordButton);
         MaterialButton logOutButton = findViewById(R.id.logOutButton);
 
+        ImageButton backButton = findViewById(R.id.buttonBack);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         changePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,9 +94,9 @@ public class SettingsActivity extends AppCompatActivity {
         CheckBox kyivCheck = findViewById(R.id.kyiv);
         CheckBox lvivCheck = findViewById(R.id.lviv);
 
-        lutsk = prefs.getBoolean("lutsk", true);
-        kyiv = prefs.getBoolean("kyiv", true);
-        lviv = prefs.getBoolean("lviv", true);
+        lutsk = prefs.getBoolean("lutsk", false);
+        kyiv = prefs.getBoolean("kyiv", false);
+        lviv = prefs.getBoolean("lviv", false);
 
         lutskCheck.setChecked(lutsk);
         kyivCheck.setChecked(kyiv);
@@ -100,13 +110,13 @@ public class SettingsActivity extends AppCompatActivity {
         CheckBox readingCheck = findViewById(R.id.reading);
         CheckBox performanceCheck = findViewById(R.id.performance);
 
-        concert = prefs.getBoolean("concert", true);
-        party = prefs.getBoolean("party", true);
-        nastolka = prefs.getBoolean("nastolka", true);
-        cosplay = prefs.getBoolean("cosplay", true);
-        vystava = prefs.getBoolean("vystava", true);
-        reading = prefs.getBoolean("reading", true);
-        performance = prefs.getBoolean("performance", true);
+        concert = prefs.getBoolean("concert", false);
+        party = prefs.getBoolean("party", false);
+        nastolka = prefs.getBoolean("nastolka", false);
+        cosplay = prefs.getBoolean("cosplay", false);
+        vystava = prefs.getBoolean("vystava", false);
+        reading = prefs.getBoolean("reading", false);
+        performance = prefs.getBoolean("performance", false);
 
         concertCheck.setChecked(concert);
         partyCheck.setChecked(party);

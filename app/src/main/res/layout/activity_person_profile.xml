@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000">
+
+            <ImageView
+                android:background="#00000000"
+                android:id="@+id/topbarIcon"
+                android:src="@drawable/group_20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/topBarText"/>
+
+            <TextView
+                android:id="@+id/topBarText"
+                android:text=""
+                android:textSize="25dp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/montserrat_medium"
+                android:background="#00000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/topbarIcon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/profileicon_2"
+                android:layout_marginBottom="5dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/username"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="10dp"
+
+                android:fontFamily="@font/montserrat_bold"
+                android:text="username"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/stats"
+                app:layout_constraintLeft_toLeftOf="@id/profileImage"
+                app:layout_constraintRight_toRightOf="@id/profileImage"
+                app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+            <LinearLayout
+                android:id="@+id/stats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/username"
+                app:layout_constraintRight_toRightOf="@id/username"
+                app:layout_constraintTop_toBottomOf="@id/username"
+                app:layout_constraintBottom_toTopOf="@id/editProfile">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="Події"
+                        android:textColor="#FFF"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/eventsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:text=""
+                        android:textColor="#FFF"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textSize="16sp"
+                        android:text="Ранг"
+                        android:textColor="#FFF" />
+
+                    <TextView
+                        android:id="@+id/rankText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="@font/montserrat"
+                        android:text=""
+                        android:textColor="#FFF"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:textSize="13sp"
+                android:textColor="#FFF"
+                android:fontFamily="@font/montserrat"
+
+                app:layout_constraintLeft_toLeftOf="@id/stats"
+                app:layout_constraintRight_toRightOf="@id/stats"
+                app:layout_constraintTop_toBottomOf="@id/stats"
+                app:layout_constraintBottom_toTopOf="@id/EventsHandler"/>
+
+            <LinearLayout
+                android:id="@+id/EventsHandler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

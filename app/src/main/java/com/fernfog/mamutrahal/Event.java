@@ -31,6 +31,10 @@ public class Event extends Fragment {
     boolean toRemove;
     data daataa;
 
+    public Event() {
+
+    }
+
     public Event(EventData eventData, boolean toRemove) {
         this.eventData = eventData;
         this.toRemove = toRemove;
@@ -66,20 +70,6 @@ public class Event extends Fragment {
         TextView dateText = view.findViewById(R.id.dateText);
         TextView timeText = view.findViewById(R.id.timeText);
         ImageView imageView = view.findViewById(R.id.imageOfEvent);
-
-        ViewGroup.LayoutParams imageViewParams = imageView.getLayoutParams();
-
-        CardView cardView = view.findViewById(R.id.cardView);
-
-//        cardView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                imageViewParams.height = cardView.getHeight();
-//                imageViewParams.width = cardView.getWidth() / 2;
-//
-//                imageView.setLayoutParams(imageViewParams);
-//            }
-//        });
 
         descText.setText(eventData.getDesccc());
         dateText.setText(eventData.getDate());
